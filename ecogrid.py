@@ -16,10 +16,11 @@ st.markdown("""
 Ứng dụng này thực hiện phân tích dữ liệu tiêu thụ điện và điều kiện thời tiết để xác định mối quan hệ giữa các yếu tố.
 Dữ liệu được lấy từ GitHub và xử lý trực tiếp trong ứng dụng này.
 """)
+energy_url = 'https://raw.githubusercontent.com/phantuan1311/DA_with_Python/refs/heads/main/energy_dataset.csv'
+weather_url = 'https://raw.githubusercontent.com/phantuan1311/DA_with_Python/refs/heads/main/weather_features.csv'
 
-energy_data = pd.read_csv("energy_dataset.csv")
-weather_data = pd.read_csv("weather_features.csv")
-
+energy_data = pd.read_csv(energy_url)
+weather_data = pd.read_csv(weather_url)
 
 # Chuyển đổi cột thời gian sang định dạng datetime
 energy_data['time'] = pd.to_datetime(energy_data['time'], utc=True)
